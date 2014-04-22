@@ -29,7 +29,7 @@ class CatarsePaypalExpress::PaypalExpressController < ApplicationController
         ip: request.remote_ip,
         return_url: success_paypal_express_url(id: contribution.id),
         cancel_return_url: cancel_paypal_express_url(id: contribution.id),
-        currency_code: 'BRL',
+        currency_code: 'EUR',
         description: t('paypal_description', scope: SCOPE, :project_name => contribution.project.name, :value => contribution.display_value),
         notify_url: ipn_paypal_express_index_url
       })
